@@ -67,9 +67,9 @@ if uploaded_file:
     ax.grid()
 
     st.pyplot(fig)
-st.dataframe(outliers[["time_sent", "sys_w_abs"]])
-st.download_button("Download Breaches CSV",
+    st.dataframe(outliers[["time_sent", "sys_w_abs"]])
+    st.download_button("Download Breaches CSV",
                    outliers.to_csv(index=False),
                    "breaches.csv")
-df["rolling"] = df["sys_w_abs"].rolling(50).mean()
-ax.plot(df["time_sent"], df["rolling"], linewidth=2, label="Trend")
+    df["rolling"] = df["sys_w_abs"].rolling(50).mean()
+    ax.plot(df["time_sent"], df["rolling"], linewidth=2, label="Trend")
